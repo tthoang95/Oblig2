@@ -12,12 +12,13 @@ public class Robot {
         this.botType = botType;
     }
 
-    public void reportStatus() {
+    public String reportStatus() {
         // Metode for å rapportere statusen til robotten
-        System.out.println("Dette er bot " + name + " av type " + botType + ". Denne enheten har " + batteryLevel + " batterikapasitet igjen og bor " + distancetoPark + " meter fra parken.");
         // Endre metoden slik at den retunerer en tekst streng som forklarer statusen til roboten
         // eksempel: Dette er bot Dancatron 4000 av type B-Bot.
         // Denne enheten har 80.0 batterikapasitet igjen og bor 1500 meter fra parken.
+        return "Dette er en bot " + name + " av type " + botType + ". Denne enheten har " + batteryLevel + " batterikapasitet igjen og bor " + distancetoPark + " meter fra parken.";
+
     }
 
     public boolean canWalkToThePark(World world) {
