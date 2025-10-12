@@ -9,9 +9,15 @@ public class World {
 
     public boolean isSunday() {
         // Endre metoden slik at den returner true hvis det er søndag (hint: Modulo %)
+        if (day % 7 == 0) {
+            return true;
+        }
         return false;
     }
 
-    public boolean getIsRaining() {return this.isRaining;}
-    public int getDay() {return this.day;}
+    public boolean getIsRaining() {
+        return this.isRaining;}
+
+    public int getDay() {
+        return this.day;}
 }
