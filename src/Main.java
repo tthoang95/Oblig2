@@ -4,7 +4,7 @@ public class Main {
         World todaysWorld = new World(7, false);
 
         // Opprett to Robot-objekter
-        Robot robotV1 = new Robot("Dancatron 4000",0.9,100,"B-bot");
+        Robot robotV1 = new Robot("Dancatron 4000",50,100,"B-bot");
         System.out.println(robotV1.reportStatus());
 
         robotV1.canWalkToThePark(todaysWorld);
