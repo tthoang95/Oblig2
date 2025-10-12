@@ -25,7 +25,7 @@ public class Robot {
         System.out.println("canWalkToThePark-metoden sjekker om boten " + name + " kan gå til parken...");
         if (!world.getIsRaining()) {
             if (world.isSunday()) {
-                if (100 <= distancetoPark / batteryLevel) {
+                if (batteryLevel >= distancetoPark / 100) {
                     System.out.println(name + "boten kan gå i parken!");
                     return true;
                 } else {

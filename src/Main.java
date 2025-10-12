@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         // Oppretter en Verden-objekt (omgivelsene)
-        World todaysWorld = new World(122, false);
+        World todaysWorld = new World(7, false);
 
         // Opprett to Robot-objekter
         Robot robotV1 = new Robot("Dancatron 4000",0.9,100,"B-bot");
