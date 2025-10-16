@@ -48,17 +48,17 @@ public class Robot {
 
     public boolean canDanceAtClub(World world) {
         System.out.println("canDanAtClub-metoden sjekker om " + name + " boten kan være med på dansegulvet...");
-        if (botType.equals("B-bot") && (batteryLevel >= 50 && batteryLevel >= distancetoPark / 100)) {
-            if (world.getDay() % 7 != 1) {
-                System.out.println(name + " kan være med på dansegulvet!");
-                return true;
-            } else {
-                System.out.println("Klubben er stengt på mandager.");
-            }
-        } else {
-            System.out.println(name + " er oppfyller ikke kravet om å få være med på dansegulvet.");
+
+        if (!(botType.equals("B-bot") && (batteryLevel >= 50))) {
+            System.out.println(name + " oppfyller ikke kravet om å få være med på dansegulvet.");
+            return false;
         }
-        return false;
+        if (world.getDay() % 7 == 1) {
+            System.out.println("Klubben er stengt på mandager.");
+            return false;
+        }
+        System.out.println(name + " kan være med på dansegulvet!");
+        return true;
     }
 }
 
