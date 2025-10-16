@@ -21,26 +21,6 @@ public class Robot {
 
     }
 
-//    public boolean canWalkToThePark(World world) {
-//        System.out.println("canWalkToThePark-metoden sjekker om boten " + name + " kan gå til parken...");
-//        if (!world.getIsRaining()) {
-//            if (world.isSunday()) {
-//                if (batteryLevel >= distancetoPark / 100) {
-//                    System.out.println(name + "boten kan gå i parken!");
-//                    return true;
-//                } else {
-//                    System.out.println(name + "boten kan ikke gå i parken fordi den ikke har nok batteri.");
-//                }
-//            } else {
-//                System.out.println(name + " boten kan ikke gå i parken fordi det er ikke søndag.");
-//            }
-//        } else {
-//            System.out.println(name + " boten kan ikke gå i parken fordi det regner.");
-//        }
-//        return false;
-//    }
-
-
     public boolean canWalkToThePark(World world) {
 
         double distanceRobotCanWalk = batteryLevel * 100;
