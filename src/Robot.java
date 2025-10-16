@@ -21,25 +21,46 @@ public class Robot {
 
     }
 
+//    public boolean canWalkToThePark(World world) {
+//        System.out.println("canWalkToThePark-metoden sjekker om boten " + name + " kan gå til parken...");
+//        if (!world.getIsRaining()) {
+//            if (world.isSunday()) {
+//                if (batteryLevel >= distancetoPark / 100) {
+//                    System.out.println(name + "boten kan gå i parken!");
+//                    return true;
+//                } else {
+//                    System.out.println(name + "boten kan ikke gå i parken fordi den ikke har nok batteri.");
+//                }
+//            } else {
+//                System.out.println(name + " boten kan ikke gå i parken fordi det er ikke søndag.");
+//            }
+//        } else {
+//            System.out.println(name + " boten kan ikke gå i parken fordi det regner.");
+//        }
+//        return false;
+//    }
+
+
     public boolean canWalkToThePark(World world) {
-        System.out.println("canWalkToThePark-metoden sjekker om boten " + name + " kan gå til parken...");
-        if (!world.getIsRaining()) {
-            if (world.isSunday()) {
-                if (batteryLevel >= distancetoPark / 100) {
-                    System.out.println(name + "boten kan gå i parken!");
-                    return true;
-                } else {
-                    System.out.println(name + "boten kan ikke gå i parken fordi den ikke har nok batteri.");
-                }
-            } else {
-                System.out.println(name + " boten kan ikke gå i parken fordi det er ikke søndag.");
-            }
-        } else {
-            System.out.println(name + " boten kan ikke gå i parken fordi det regner.");
+
+        double distanceRobotCanWalk = batteryLevel * 100;
+
+        System.out.println("canWalkToThePark-metoden sjekker om " + name + " kan gå til parken.");
+        if (world.getIsRaining()) {
+            System.out.println(name + " kan ikke gå i parken fordi det regner.");
+            return false;
         }
+        if (!world.isSunday()) {
+            System.out.println(name + " kan ikke gå i parken fordi det ikke er søndag.");
+            return false;
+        }
+        if (distanceRobotCanWalk < distancetoPark) {
+            System.out.println(name + " kan ikke gå i parken fordi den ikke har nok batteri.");
+            return false;
+        }
+        System.out.println(name + " kan gå i parken!");
         return false;
     }
-
 
     // Sjekk om det er søndag. Kan bare gå i parken på søndager.
 
