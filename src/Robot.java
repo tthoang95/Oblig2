@@ -1,9 +1,8 @@
 public class Robot {
-    // gi robotten 4 attributter: name, batteryLevel, distancetoPark og botType
-    String name;
-    double batteryLevel;
-    int distancetoPark;
-    String botType;
+    private String name;
+    private double batteryLevel;
+    private int distancetoPark;
+    private String botType;
 
     public Robot(String name, double batteryLevel, int distancetoPark, String botType) {
         this.name = name;
@@ -13,11 +12,7 @@ public class Robot {
     }
 
     public String reportStatus() {
-        // Metode for å rapportere statusen til robotten
-        // Endre metoden slik at den retunerer en tekst streng som forklarer statusen til roboten
-        // eksempel: Dette er bot Dancatron 4000 av type B-Bot.
-        // Denne enheten har 80.0 batterikapasitet igjen og bor 1500 meter fra parken.
-        return "Dette er en bot " + name + " av type " + botType + ". Denne enheten har " + batteryLevel + " batterikapasitet igjen og bor " + distancetoPark + " meter fra parken.";
+        return "Dette er en bot " + name + " av type " + botType + ". Denne enheten har " + batteryLevel + " batterikapasitet igjen og bor " + distancetoPark + " meter fra parken.\n";
 
     }
 
@@ -27,46 +22,33 @@ public class Robot {
 
         System.out.println("canWalkToThePark-metoden sjekker om " + name + " kan gå til parken.");
         if (world.getIsRaining()) {
-            System.out.println(name + " kan ikke gå i parken fordi det regner.");
+            System.out.println(name + " kan ikke gå i parken fordi det regner.\n");
             return false;
         }
         if (!world.isSunday()) {
-            System.out.println(name + " kan ikke gå i parken fordi det ikke er søndag.");
+            System.out.println(name + " kan ikke gå i parken fordi det ikke er søndag.\n");
             return false;
         }
         if (distanceRobotCanWalk < distancetoPark) {
-            System.out.println(name + " kan ikke gå i parken fordi den ikke har nok batteri.");
+            System.out.println(name + " kan ikke gå i parken fordi den ikke har nok batteri.\n");
             return false;
         }
-        System.out.println(name + " kan gå i parken!");
-        return false;
+        System.out.println(name + " kan gå i parken!\n");
+        return true;
     }
-
-    // Sjekk om det er søndag. Kan bare gå i parken på søndager.
-
-    // Sjekk batterinivå. En bot trenger 1% batterinivå per 100 meter for å gå til parken. //divisjon
-
 
     public boolean canDanceAtClub(World world) {
         System.out.println("canDanAtClub-metoden sjekker om " + name + " boten kan være med på dansegulvet...");
 
         if (!(botType.equals("B-bot") && (batteryLevel >= 50))) {
-            System.out.println(name + " oppfyller ikke kravet om å få være med på dansegulvet.");
+            System.out.println(name + " oppfyller ikke kravet om å få være med på dansegulvet.\n");
             return false;
         }
         if (world.getDay() % 7 == 1) {
-            System.out.println("Klubben er stengt på mandager.");
+            System.out.println("Klubben er stengt på mandager.\n");
             return false;
         }
-        System.out.println(name + " kan være med på dansegulvet!");
+        System.out.println(name + " kan være med på dansegulvet!\n");
         return true;
     }
 }
-
-
-
-// lag en metode som heter canDanceAtClub, som sjekker om boten kan være med på danseklubben
-// bottypen må være av type B-Bot (hint .equals)
-// En bot trenger minimum 50% batterikapasitet for å være med
-// Det kan ikke være mandag. Da er danseklubben stengt.]
-
